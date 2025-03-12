@@ -13,6 +13,9 @@ public abstract class Person {
 
     protected Person(int id, String fullName, String address, String phone, String email, LocalDate dateOfBirth) {
         this.id = id;
+        if (id < 0) {
+            throw new IllegalArgumentException("ID cannot be negative.");
+        }
         this.fullName = fullName;
         this.address = address;
         this.phone = phone;
